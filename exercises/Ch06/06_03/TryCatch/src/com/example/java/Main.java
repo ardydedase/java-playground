@@ -7,8 +7,12 @@ public class Main {
         String welcome = "Welcome!";
         char[] chars = welcome.toCharArray();
 
-        char lastChar = chars[chars.length];
-        System.out.println("Last character: " + lastChar);
+        try {
+            char lastChar = chars[chars.length];
+            System.out.println("Last character: " + lastChar);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+        }
 
     }
 

@@ -8,11 +8,24 @@ public class Main {
             "October", "November", "December"};
 
     public static void main(String[] args) {
+        loopIt("Months of the year:");
+        loopIt("Second run:");
+        loopIt("Third run:");
+    }
+
+    static void loopIt(String label) {
+        System.out.println(label);
+
+        for (int i = 0; i < label.length(); i++) {
+            System.out.print("*");
+        }
+        System.out.println("");
 
         for (int i = 0; i < months.length; i++) {
             System.out.println(months[i]);
         }
 
+        System.out.println("");
     }
 
 }

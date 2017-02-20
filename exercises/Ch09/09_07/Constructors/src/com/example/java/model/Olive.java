@@ -6,6 +6,17 @@ public class Olive {
     private long color = 0x2E0854;
     private int oil = 3;
 
+    // no argument constructor
+    public Olive() {
+        // default without args
+    }
+
+    public Olive(String name, long color, int oil) {
+        this.name = name;
+        this.color = color;
+        this.oil = oil;
+    }
+
     public String getName() {
         return name;
     }

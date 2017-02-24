@@ -17,10 +17,23 @@ public class Main {
         olives.add(new Ligurian());
         olives.add(new Ligurian());
 
-        OlivePress press = new OlivePress();
+        Press press = new OlivePress();
+        press.setOil(5);
         int totalOil = press.getOil(olives);
 
         System.out.println("You got " + totalOil + " units of oil");
+
+//        Press p2 = new Press() {
+//            @Override
+//            public int getOil(List<Olive> olives) {
+//                return 0;
+//            }
+//
+//            @Override
+//            public void setOil(int oil) {
+//
+//            }
+//        }
 
     }
 

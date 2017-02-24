@@ -36,7 +36,7 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            stream.close();;
+            stream.close();
             buf.close();
         }
 

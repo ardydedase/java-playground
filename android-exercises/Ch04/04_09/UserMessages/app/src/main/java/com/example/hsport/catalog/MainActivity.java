@@ -1,6 +1,7 @@
 package com.example.hsport.catalog;
 
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -10,13 +11,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
+    private CoordinatorLayout coordinatorLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -39,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) findViewById(R.id.longText);
         tv.setText(builder.toString());
 
+
+        // no access to layout until this current method is called
+
     }
 
     @Override
@@ -57,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            // Toast is managed by the application framework not by the UI.
+            // Toast messages survive even when the app is closed.
+//            Toast.makeText(MainActivity.this, "You selected the settings menu",
+//                    Toast.LENGTH_LONG).show();
+
+            // Snackbar messages
+            Snackbar.make(coordinatorLayout,
+                    "You selected settings." , Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+
             return true;
         }
 

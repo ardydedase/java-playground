@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,6 +29,22 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        // reference to container
+        LinearLayout layout = (LinearLayout) findViewById(R.id.content_layout);
+
+        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT);
+
+        for (int i = 0; i < 3; i++) {
+            // button created on the context of 'this' activity
+            Button button = new Button(this);
+            button.setText("click me");
+            button.setLayoutParams(params);
+
+            layout.addView(button);
+        }
     }
 
     @Override
